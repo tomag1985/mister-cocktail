@@ -1,7 +1,14 @@
 class CocktailsController < ApplicationController
 	
 	def index
-		@cocktails = Cocktail.all
+		if params[:query].present?
+			@query = params[:query]
+			@cocktails = Cocktail.where("name LIKE ?","%#{@query}%")
+			# Preventing SQL Injection and Database error for
+			# unknown characters
+		  else
+			@cocktails = Cocktail.all
+		  end
 	end
 
 	def show

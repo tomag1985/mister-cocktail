@@ -14,16 +14,19 @@
 
   <body>
 
+
+
     <nav class="navbar navbar-dark bg-dark justify-content-between">
+      
       <%= link_to "Mister cocktail", cocktails_path, class: "navbar-brand" %>
       <form class="form-inline">
         <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>        
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         <%= link_to 'Add Cocktail', new_cocktail_path, class: 'btn btn-outline-primary my-2 my-sm-0 ml-2' %>
       </form>
     </nav>
 
-
+    
     <%= yield %>
   </body>
 </html>
