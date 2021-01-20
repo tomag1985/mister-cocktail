@@ -18,15 +18,29 @@
 }
 
 .container {
+  position: relative;
   padding-top: 5px;
   margin-top: 5px;
 }
 
-img {
-  width: 200px;
-  height: 400px;
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-top: 0;
+}
+
+
+.banner h1 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
 }
 
 body {
-  background-image: "https://saborgourmet.com//wp-content/uploads/como-hacer-daiquiri-iStock-.jpg";
+  background-color: white;
 }
