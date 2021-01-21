@@ -12,6 +12,8 @@
 @import "components/index";
 @import "pages/index";
 
+@import 'select2/dist/css/select2';
+
 
 .btn {
   border-radius: 10px;
@@ -23,7 +25,9 @@
   margin-top: 5px;
 }
 
-
+.container h1 {
+  text-align: center;
+}
 
 .banner {
   background-size: cover;
@@ -43,4 +47,8 @@
 
 body {
   background-color: white;
+  font-family: "Courier New", "sans-serif";
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
 }

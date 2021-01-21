@@ -9,8 +9,8 @@
 <div class="container mt-3">
 	<div class="row">
 		<div class="col-7 mr-3 p-3">
-			<h2>Descripción</h2>
 			<ul style="list-style-type:none">
+			<h2>Description</h2>
 				<% @cocktail.doses.each do |dose| %>
 					<li><%= dose.description %> </li>
 				<% end %>
@@ -18,14 +18,14 @@
 		</div>
 
 		<div class="col-4 p-3">
-			<h2>Ingredientes</h2>
 			<ul style="list-style-type:none">
+			<h2>Ingredients</h2>
 				<% @cocktail.doses.each do |dose| %>
-					<li><strong><%= dose.ingredient.name %></strong> <%= link_to "delete", dose_path(dose), method: :delete%> </li>
+					<li><strong><%= dose.ingredient.name %></strong> - <%= dose.description %> <%= link_to "(delete)", dose_path(dose), method: :delete%> </li>
 			<% end %>
+			<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class:"btn btn-dark mt-3" %>
 			</ul>
 			
-			<%= link_to "Agregar ingrediente", new_cocktail_dose_path(@cocktail), class:"btn btn-dark" %>
 			
 		</div>
 

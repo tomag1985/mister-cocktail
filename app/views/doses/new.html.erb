@@ -3,7 +3,7 @@
 
 	<%= simple_form_for [@cocktail, @dose] do |c| %>
 	<%= c.input :description %>
-	<%= c.association :ingredient %>
+	<%= c.association :ingredient, input_html: { class: 'select2' } %>
 	<%= c.submit "Add cocktail", class:"btn btn-primary"%>
 	<% end %>
 </div>
