@@ -23,16 +23,17 @@
 			<% end %>
 			<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class:"btn btn-dark mt-3" %>
 			</ul>
-			
-			
 		</div>
+	</div>	
+</div>
 
+<div class="container">
+	<ul class="list-group">
+		<% @cocktail.reviews.each do |review| %>
+			<li class="list-group-item"><%= review.content %> <% review.rating.times do %> <i class="fas fa-star stars" style="yellow"> </i>  <% end %> </li>
+			<hr>
+		<% end %>
+	</ul>
 
-	</div>
-	
-	<ul>
-
-
-
-
+	<%= link_to "Add review",  new_cocktail_review_path(@cocktail), class:"btn btn-dark mt-3 mb-3" %>
 </div>
