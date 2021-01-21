@@ -11,9 +11,7 @@
 		<div class="col-7 mr-3 p-3">
 			<ul style="list-style-type:none">
 			<h2>Description</h2>
-				<% @cocktail.doses.each do |dose| %>
-					<li><%= dose.description %> </li>
-				<% end %>
+				<li><%= @cocktail.description %> </li>
 			</ul>
 		</div>
 
