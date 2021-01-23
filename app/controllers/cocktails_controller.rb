@@ -3,7 +3,7 @@ class CocktailsController < ApplicationController
 	def index
 		if params[:query].present?
 			@query = params[:query]
-			@cocktails = Cocktail.where("name LIKE ?","%#{@query}%")
+			@cocktails = Cocktail.where("LOWER(name) LIKE ?","%#{@query.downcase}%")
 			# Preventing SQL Injection and Database error for
 			# unknown characters
 		  else

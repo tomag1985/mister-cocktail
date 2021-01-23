@@ -1,5 +1,5 @@
-<div class="container">
-	<h1>Agregue aquí su review</h1>
+<div class="container w-50 mt-3">
+	<h1>Add your review</h1>
 
 	<%= simple_form_for [ @cocktail, @review ] do |f| %>
 		<%= f.input :rating, collection: 1..5 %>

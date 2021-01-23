@@ -8,32 +8,34 @@
 
 <div class="container mt-3">
 	<div class="row">
-		<div class="col-7 mr-3 p-3">
+		<div class="col-7 mr-3 p-3 shadow-lg p-3 mb-5 bg-white rounded" style="word-wrap:break-word">
+			<h3>Description</h3>
 			<ul style="list-style-type:none">
-			<h2>Description</h2>
 				<li><%= @cocktail.description %> </li>
 			</ul>
 		</div>
 
-		<div class="col-4 p-3">
+		<div class="col-4 p-3 shadow-lg p-3 mb-5 bg-white rounded">
+			<h3>Ingredients</h3>
 			<ul style="list-style-type:none">
-			<h2>Ingredients</h2>
 				<% @cocktail.doses.each do |dose| %>
 					<li><strong><%= dose.ingredient.name %></strong> - <%= dose.description %> <%= link_to "(delete)", dose_path(dose), method: :delete%> </li>
 			<% end %>
-			<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class:"btn btn-dark mt-3" %>
 			</ul>
+			<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class:"btn btn-dark mt-3 w-100" %>
 		</div>
+
+		<div class="col-8 p-3 mx-auto mt-3 shadow-lg p-3 mb-5 bg-white rounded">
+		<!-- <div class="container w-50 mt-3 mb-3 p-3 shadow-lg p-3 mb-5 bg-white rounded">-->
+			<ul class="list-group">
+				<% @cocktail.reviews.each do |review| %>
+				<li class="list-group-item"><%= review.content %> <% review.rating.times do %> <i class="fas fa-star stars" style="yellow"> </i>  <% end %> </li>
+				<hr>
+				<% end %>
+			</ul>
+			<%= link_to "Add review",  new_cocktail_review_path(@cocktail), class:"btn btn-dark mt-3 mb-3 w-100" %>
+		</div>		
 	</div>	
 </div>
 
-<div class="container">
-	<ul class="list-group">
-		<% @cocktail.reviews.each do |review| %>
-			<li class="list-group-item"><%= review.content %> <% review.rating.times do %> <i class="fas fa-star stars" style="yellow"> </i>  <% end %> </li>
-			<hr>
-		<% end %>
-	</ul>
 
-	<%= link_to "Add review",  new_cocktail_review_path(@cocktail), class:"btn btn-dark mt-3 mb-3" %>
-</div>
