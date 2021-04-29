@@ -1,6 +1,5 @@
-<div class="container w-50 mt-3">
+<div class="container col-xs-12 col-md-8 mt-3">
 	<h1>Add your doses</h1>
-
 	<%= simple_form_for [@cocktail, @dose] do |c| %>
 	<%= c.association :ingredient, input_html: { class: 'select2' } %>
 	<%= c.input :description %>
